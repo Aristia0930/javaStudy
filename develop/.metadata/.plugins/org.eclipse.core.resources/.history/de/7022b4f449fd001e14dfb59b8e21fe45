@@ -1,0 +1,30 @@
+package chap13;
+
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class Example01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HashSet<Integer> cat=new HashSet<>();
+		cat.add(1);
+		cat.add(12);
+		cat.add(2);
+		cat.add(10);
+		cat.add(0);
+		cat.add(15);
+		cat.add(100);
+		cat.add(111111111);
+		cat.add(222222222);
+		cat.add(333333333);
+		cat.add(1111111111);
+
+		System.out.println(cat);
+		Iterator iter=cat.iterator();
+		System.out.println(iter);
+
+	}
+
+}

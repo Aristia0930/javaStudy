@@ -1,0 +1,24 @@
+package chap13;
+
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class Example01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HashSet<String> cat=new HashSet<String>();
+		cat.add("5");
+		cat.add("3");
+		cat.add("가");
+		cat.add("1");
+		cat.add("b");
+		cat.add("A");
+		System.out.println(cat);
+		Iterator iter=cat.iterator();
+		System.out.println(iter);
+
+	}
+
+}

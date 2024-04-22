@@ -1,0 +1,42 @@
+package chap11;
+
+import java.util.Scanner;
+
+public class Exception01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input =new Scanner(System.in);
+		
+		
+//		try {
+//			int num2=10/num;
+//			System.out.println(num2);
+//			
+//		}catch (Exception e) {
+//			// TODO: handle exception
+//			System.out.println("올바른 수자입력");
+//			System.out.println(e.getMessage());
+//			e.printStackTrace();
+//		}
+		int[] array=new int[5];
+		
+		try {
+			int num=input.nextInt();
+			array[num]=10/num;
+			System.out.println(num);
+			
+		}catch (ArithmeticException e) {
+			// TODO: handle exception
+			System.out.println(e);
+
+		}catch (NumberFormatException e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+		
+		System.out.println("1");
+
+	}
+
+}

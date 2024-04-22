@@ -1,0 +1,36 @@
+package chap11;
+import java.util.Scanner;
+
+public class Exception04 {
+	
+	static void check(int num) throws NumberFormatException {
+		if(num<0)
+			throw new NumberFormatException("0보다작다");
+		else
+			System.out.println(num);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("수 입력");
+		int num =input.nextInt();
+		
+		try {
+			if(num<0)
+				check(num);
+			else 
+				System.out.println(num);
+//			
+			
+			
+		}catch (NumberFormatException e) {
+			// TODO: handle exception
+			System.out.println("예외발생 "+e);
+		}
+		
+
+	}
+
+}

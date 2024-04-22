@@ -1,0 +1,42 @@
+package chap11;
+
+class MyException extends Exception{
+	
+	String str1;
+	public MyException(String s) {
+		super(s);
+		str1=s;
+	}
+	public String toString() {
+		return("MyException "+str1);
+		
+	}
+
+}
+
+
+
+public class Exception05 {
+	
+	void check(int w) throws MyException{
+		if(w<100) {
+			throw new MyException("사용자 정의  클래스 호출");
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Exception05 obj=new Exception05();
+		try {
+			obj.check(60);
+		}
+		catch (MyException e) {
+			// TODO: handle exception
+			System.out.println("예외처리입니다");
+			System.out.println(e.getMessage());
+			System.out.println(e);
+		}
+
+	}
+
+}

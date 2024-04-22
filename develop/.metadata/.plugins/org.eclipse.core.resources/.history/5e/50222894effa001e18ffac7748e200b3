@@ -1,0 +1,18 @@
+package com.chop10;
+import com.javamaster.mypackage.*;
+public class Package {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Cat myCat=new Cat();
+		Cat myCat2=new Cat();
+		
+		myCat.eat();
+		myCat.scratch();
+		myCat.meow();
+		
+		System.out.println(myCat.equals(myCat2));
+
+	}
+
+}

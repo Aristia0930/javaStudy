@@ -1,0 +1,34 @@
+package chap13;
+
+import java.util.HashMap;
+
+public class Exaple03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stu
+		HashMap<Integer, Integer> obj = new HashMap<Integer, Integer>();
+		for(int i=0;i<10;i++) {
+			obj.put(i, i);
+		}
+		
+		for(int i=0;i<11;i++) {
+			if (obj.containsKey(i)) {
+				Integer a=obj.get(i);
+				obj.put(i, a+1);
+				
+			}
+				
+			else {
+				obj.put(i, i);
+			}
+				
+			
+		}
+		
+		for(int i=0;i<11;i++) {
+			System.out.println(obj.get(i));
+		}
+
+	}
+
+}

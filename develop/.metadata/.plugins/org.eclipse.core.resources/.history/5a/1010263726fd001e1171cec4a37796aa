@@ -1,0 +1,97 @@
+package com.market.cart;
+import com.market.bookitem.Book;
+
+
+
+public class Cart implements CartInterface{
+	static final int Num_Book=3;
+	public CarItem[]  mCartItem = new CarItem[Num_Book];
+	public static int mCartCount =0;
+	
+	public Cart() {
+		
+	}
+
+	@Override
+	public void printBookList(Book[] booklist) {
+		// TODO Auto-generated method stub
+		for(int i=0; i<booklist.length;i++) {
+			System.out.print(booklist[i].getBookId());
+			System.out.print(booklist[i].getName());
+			System.out.print(booklist[i].getAuthor());
+			System.out.print(booklist[i].getDescription());
+			System.out.print(booklist[i].getCategory());
+			System.out.print(booklist[i].getReleaseDate());
+			System.out.println("");
+		}
+		
+	}
+
+	@Override
+	public boolean isCartInBook(String bookId) {
+		// TODO Auto-generated method stub
+		boolean flage = false;
+		for(int i =0; i<mCartCount;i++) {
+			if(bookId==mCartItem[i].getBookID()) {
+				mCartItem[i].setQuantity(mCartItem[i].getQuantity()+1);
+				flage=true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public void insertBook(Book book) {
+		// TODO Auto-generated method stub
+		
+		mCartItem[mCartCount++]=new CarItem(book);
+		
+	}
+	
+	
+
+	@Override
+	public void removeCart(int numId) {
+		// TODO Auto-generated method stub
+		CarItem[] carItem =new CarItem[Num_Book];
+		int num=0;
+		for(int i=0; i<mCartCount;i++) {
+			if(numId !=i)
+				carItem[num++]=mCartItem[i];
+		mCartCount=num;
+		mCartItem=carItem
+				;
+		}
+		
+	}
+
+	@Override
+	public void deleteBook() {
+		// TODO Auto-generated method stub
+		mCartItem=new CarItem[Num_Book];
+		mCartCount=0;
+		
+	}
+	
+	public void printCart() {
+		int sum=0;
+		System.out.println("장바구니 상품 목록 보기:");
+		System.out.println("------------------------------------");
+		System.out.println("     도서ID \t| 수량\t| 합계");
+		for(int i=0; i<mCartCount;i++) {
+			System.out.print(mCartItem[i].getBookID()+"\t|");
+			System.out.print(mCartItem[i].getQuantity()+"\t|");
+			System.out.print(mCartItem[i].getTotalPrice());
+			System.out.println("");
+			sum+=mCartItem[i].getTotalPrice();
+			
+		}
+		System.out.println("--------------------------------");
+		System.out.println("총합 :" +sum);
+	}
+	
+	
+	
+	
+
+}

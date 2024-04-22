@@ -1,0 +1,19 @@
+package com.chop10;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Package12 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Date date =new Date();
+		
+		SimpleDateFormat dateF=new SimpleDateFormat("ddyyyy");
+		String fulldate = dateF.format(date);
+		System.out.println(fulldate);
+
+	}
+
+}

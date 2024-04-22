@@ -1,0 +1,14 @@
+package problem;
+
+import org.w3c.dom.NameList;
+
+public class Book {
+	private int number;
+	private String name;
+	Book(int number,String name){
+		this.number =number;
+		this.name=name;
+		
+	}
+
+}

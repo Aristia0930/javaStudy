@@ -1,0 +1,20 @@
+package com.chop10;
+import com.javamaster.mypackage.*;
+public class Package {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Cat myCat=new Cat();
+		Cat myCat2=new Cat();
+		
+		String str1=myCat.eat();
+		String str2=myCat.eat();
+		myCat.scratch();
+		myCat.meow();
+		
+		System.out.println(myCat.equals(myCat2)); //두 참조변수 주소가 다름
+		System.out.println(str1.equals(str2));
+		System.out.println(str1==str2);
+	}
+
+}
